@@ -33,14 +33,12 @@ body{
 a{color:inherit;}
 .mono{font-family:'IBM Plex Mono',monospace;}
 img,svg{display:block;}
-
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
   outline:2px solid var(--accent);outline-offset:3px;
 }
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
 }
-
 /* ===== NAV ===== */
 .nav{
   position:fixed;top:0;left:0;width:100%;z-index:999;
@@ -78,7 +76,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 .nav-toggle span{width:20px;height:1px;background:var(--ink);display:block;}
-
 @media(max-width:860px){
   .nav-links{
     position:fixed;top:64px;left:0;right:0;
@@ -91,7 +88,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .nav-link,.nav-cta{display:block;padding:18px 32px;border:none;}
   .nav-toggle{display:flex;}
 }
-
 /* ===== HERO ===== */
 .hero{
   padding:190px 40px 150px;border-bottom:1px solid var(--line);
@@ -126,7 +122,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-size:13px;letter-spacing:0.3px;color:var(--stone);text-decoration:none;
 }
 .btn-secondary:hover{color:var(--ink-soft);}
-
 .hero-watermark{
   position:absolute;right:-40px;top:50%;transform:translateY(-50%);
   width:460px;height:460px;z-index:1;
@@ -134,12 +129,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .hero-watermark path{stroke:var(--ink);}
 .hero-watermark rect{fill:var(--ink);}
-
 @media(max-width:860px){
   .hero{padding:140px 24px 90px;}
   .hero-watermark{display:none;}
 }
-
 /* ===== SECTION SCAFFOLD ===== */
 section{padding:120px 40px;}
 .section-inner{max-width:1180px;margin:auto;}
@@ -156,9 +149,7 @@ h2{
   color:var(--ink);margin-bottom:26px;
 }
 .lead{font-size:16.5px;color:var(--ink-soft);max-width:600px;line-height:1.9;font-weight:300;}
-
 @media(max-width:768px){ section{padding:80px 24px;} }
-
 /* ===== ABOUT ===== */
 .about{border-bottom:1px solid var(--line);}
 .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:90px;}
@@ -171,9 +162,7 @@ h2{
 }
 .fact-label{color:var(--stone);letter-spacing:0.2px;}
 .fact-value{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:right;}
-
 @media(max-width:860px){ .about-grid{grid-template-columns:1fr;gap:50px;} }
-
 /* ===== APPROACH ===== */
 .approach{border-bottom:1px solid var(--line);}
 .approach-head{max-width:600px;margin-bottom:70px;}
@@ -188,11 +177,9 @@ h2{
   margin-bottom:12px;color:var(--ink);
 }
 .approach-item p{font-size:14.5px;color:var(--ink-soft);line-height:1.9;font-weight:300;max-width:600px;}
-
 @media(max-width:768px){
   .approach-item{grid-template-columns:1fr;gap:10px;}
 }
-
 /* ===== FOCUS AREAS ===== */
 .focus-head{
   display:flex;justify-content:space-between;align-items:flex-end;
@@ -209,11 +196,9 @@ h2{
 .focus-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stone);}
 .focus-name{font-family:'Fraunces',serif;font-weight:440;font-size:19px;color:var(--ink);}
 .focus-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.75;font-weight:300;}
-
 @media(max-width:768px){
   .focus-row{grid-template-columns:1fr;gap:10px;padding:26px 0;}
 }
-
 /* ===== PHILOSOPHY ===== */
 .philosophy{
   background:var(--ink);color:var(--paper);
@@ -233,7 +218,6 @@ h2{
   font-family:'IBM Plex Mono',monospace;font-size:11px;
   letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);
 }
-
 /* ===== CONTACT ===== */
 .contact{border-bottom:1px solid var(--line);}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;}
@@ -248,7 +232,6 @@ h2{
 .contact-block a{color:var(--ink);border-bottom:1px solid var(--line);}
 .contact-block a:hover{color:var(--accent);border-color:var(--accent);}
 .contact-block + .contact-block{margin-top:44px;}
-
 .form-note p{font-size:13px;color:var(--stone);line-height:1.85;font-weight:300;margin-bottom:30px;max-width:440px;}
 .form-row{margin-bottom:22px;}
 .form-row label{
@@ -270,9 +253,17 @@ h2{
   transition:background 0.2s ease,color 0.2s ease;
 }
 .form-submit:hover{background:var(--ink);color:var(--paper);}
-
+.form-submit:disabled{opacity:0.6;cursor:not-allowed;}
+.success-msg{
+  display:none;
+  margin-top:20px;
+  padding:16px 0;
+  font-size:13.5px;
+  color:var(--accent);
+  font-family:'IBM Plex Mono',monospace;
+  letter-spacing:0.3px;
+}
 @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;gap:50px;} }
-
 /* ===== FOOTER ===== */
 footer{padding:70px 40px 44px;}
 .footer-inner{max-width:1180px;margin:auto;}
@@ -307,12 +298,10 @@ footer{padding:70px 40px 44px;}
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   font-size:12px;color:var(--stone);
 }
-
 @media(max-width:768px){ .footer-top{flex-direction:column;} }
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
     <a href="#top" class="brand">
@@ -333,9 +322,7 @@ footer{padding:70px 40px 44px;}
     </ul>
   </div>
 </nav>
-
 <main id="top">
-
   <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="hero-inner">
@@ -352,7 +339,6 @@ footer{padding:70px 40px 44px;}
       <rect x="24" y="24" width="6" height="6"/>
     </svg>
   </header>
-
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
     <div class="section-inner">
@@ -376,7 +362,6 @@ footer{padding:70px 40px 44px;}
       </div>
     </div>
   </section>
-
   <!-- ===== APPROACH ===== -->
   <section class="approach" id="approach">
     <div class="section-inner">
@@ -410,7 +395,6 @@ footer{padding:70px 40px 44px;}
       </div>
     </div>
   </section>
-
   <!-- ===== FOCUS AREAS ===== -->
   <section class="focus" id="focus">
     <div class="section-inner">
@@ -445,7 +429,6 @@ footer{padding:70px 40px 44px;}
       </div>
     </div>
   </section>
-
   <!-- ===== PHILOSOPHY ===== -->
   <section class="philosophy">
     <div class="philosophy-inner">
@@ -456,7 +439,6 @@ footer{padding:70px 40px 44px;}
       <cite>— Gregory Fenelon, Founder</cite>
     </div>
   </section>
-
   <!-- ===== CONTACT ===== -->
   <section class="contact" id="contact">
     <div class="section-inner">
@@ -469,36 +451,34 @@ footer{padding:70px 40px 44px;}
             <p>Fenelon Opportunity Fund Inc. is a private family office. Information about our holdings and activities is not made public, and is shared only with the family, its advisors, and counterparties directly involved in a given transaction.</p>
           </div>
         </div>
-
         <div class="form-note">
           <p>Fenelon Opportunity Fund Inc. does not manage capital on behalf of outside investors. This form is intended for prospective partners, advisors, and counterparties looking to reach the office directly.</p>
-          <form onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='Request received';">
+          <form id="contact-form" action="https://formspree.io/f/xpwnwlwn" method="POST">
             <div class="form-row">
               <label for="name">Full name</label>
-              <input type="text" id="name" required>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="form-row">
               <label for="email">Email</label>
-              <input type="email" id="email" required>
+              <input type="email" id="email" name="email" required>
             </div>
             <div class="form-row">
               <label for="status">Nature of inquiry</label>
-              <select id="status">
-                <option>Direct investment opportunity</option>
-                <option>Co-investment partnership</option>
-                <option>Advisory / professional services</option>
-                <option>Other</option>
+              <select id="status" name="inquiry">
+                <option value="Direct investment opportunity">Direct investment opportunity</option>
+                <option value="Co-investment partnership">Co-investment partnership</option>
+                <option value="Advisory / professional services">Advisory / professional services</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <button type="submit" class="form-submit">Request information</button>
+            <div class="success-msg" id="successMsg">Request received — we’ll be in touch shortly.</div>
           </form>
         </div>
       </div>
     </div>
   </section>
-
 </main>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -537,7 +517,6 @@ footer{padding:70px 40px 44px;}
     </div>
   </div>
 </footer>
-
 <script>
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -548,7 +527,42 @@ navToggle.addEventListener('click', ()=>{
 navLinks.querySelectorAll('a').forEach(a=>{
   a.addEventListener('click', ()=> navLinks.classList.remove('open'));
 });
-</script>
 
+/* CONTACT FORM — Formspree */
+const form = document.getElementById('contact-form');
+const successMsg = document.getElementById('successMsg');
+const submitBtn = form.querySelector('.form-submit');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      successMsg.style.display = 'block';
+      form.reset();
+      submitBtn.textContent = 'Request information';
+      setTimeout(() => { successMsg.style.display = 'none'; }, 8000);
+    } else {
+      alert('Something went wrong. Please try again.');
+      submitBtn.textContent = 'Request information';
+    }
+  })
+  .catch(() => {
+    alert('Network error – please check your connection and try again.');
+    submitBtn.textContent = 'Request information';
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+  });
+});
+</script>
 </body>
 </html>
