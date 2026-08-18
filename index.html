@@ -93,8 +93,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ===== HERO ===== */
-.hero{padding:190px 40px 130px;border-bottom:1px solid var(--line);}
-.hero-inner{max-width:1180px;margin:auto;}
+.hero{
+  padding:190px 40px 150px;border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.hero-inner{max-width:1180px;margin:auto;position:relative;z-index:2;}
 .hero-eyebrow{
   font-family:'IBM Plex Mono',monospace;
   font-size:11.5px;letter-spacing:2px;text-transform:uppercase;
@@ -104,7 +107,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-family:'Fraunces',serif;font-weight:440;
   font-size:clamp(38px,5.6vw,72px);
   line-height:1.06;letter-spacing:-0.5px;
-  max-width:920px;margin-bottom:34px;
+  max-width:780px;margin-bottom:34px;
 }
 .hero h1 em{font-style:italic;font-weight:440;color:var(--accent);}
 .hero p.lede{
@@ -112,7 +115,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   max-width:520px;line-height:1.85;font-weight:300;
   margin-bottom:44px;
 }
-.hero-actions{display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin-bottom:100px;}
+.hero-actions{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
 .btn-primary{
   font-size:13px;letter-spacing:0.3px;color:var(--ink);text-decoration:none;
   border-bottom:1px solid var(--ink);padding-bottom:3px;
@@ -124,28 +127,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .btn-secondary:hover{color:var(--ink-soft);}
 
-/* signature: the ledger — sixty considered, six held */
-.ledger{
-  display:grid;grid-template-columns:repeat(20,1fr);
-  gap:6px;max-width:920px;
+.hero-watermark{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%);
+  width:460px;height:460px;z-index:1;
+  opacity:0.045;pointer-events:none;
 }
-.ledger-cell{
-  aspect-ratio:1;border:1px solid var(--line);
-  opacity:0;animation:cell-in 0.5s ease forwards;
-}
-.ledger-cell.held{background:var(--accent);border-color:var(--accent);}
-@keyframes cell-in{ to{opacity:1;} }
-.ledger-cap{
-  display:flex;justify-content:space-between;align-items:baseline;
-  margin-top:22px;max-width:920px;flex-wrap:wrap;gap:10px;
-}
-.ledger-cap .mono{font-size:11px;letter-spacing:1.5px;color:var(--stone);text-transform:uppercase;}
-.ledger-cap .mono strong{color:var(--ink);font-weight:500;}
+.hero-watermark path{stroke:var(--ink);}
+.hero-watermark rect{fill:var(--ink);}
 
 @media(max-width:860px){
   .hero{padding:140px 24px 90px;}
-  .ledger{grid-template-columns:repeat(12,1fr);}
-  .hero-actions{margin-bottom:70px;}
+  .hero-watermark{display:none;}
 }
 
 /* ===== SECTION SCAFFOLD ===== */
@@ -348,20 +340,17 @@ footer{padding:70px 40px 44px;}
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Single-Family Office — Dallas, Texas</div>
-      <h1>We would rather own six businesses we understand <em>completely</em> than sixty we understand a little.</h1>
-      <p class="lede">Fenelon Opportunity Fund Inc. is the private investment office of the Fenelon family. We review broadly and commit narrowly — capital is deployed only where the thesis can be stated in plain language and held for as long as it takes to prove out.</p>
+      <h1>Backing the ventures we believe in.</h1>
+      <p class="lede">Fenelon Opportunity Fund Inc. is the private investment office of the Fenelon family. We bring capital, time, and counsel directly to the businesses we back — as an owner and partner, not a tax-advantaged real estate vehicle.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Get in touch</a>
         <a href="#approach" class="btn-secondary">See our approach</a>
       </div>
-
-      <div class="ledger" id="ledger" role="img" aria-label="Grid of sixty squares representing opportunities reviewed, six filled in to represent positions held"></div>
-      <div class="ledger-cap">
-        <span class="mono"><strong>60</strong> reviewed this cycle</span>
-        <span class="mono"><strong>6</strong> held</span>
-        <span class="mono">0 outside capital</span>
-      </div>
     </div>
+    <svg class="hero-watermark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M10 8 L10 32 M10 8 L28 8 M10 19 L22.5 19" stroke-width="1.4" fill="none" stroke-linecap="square"/>
+      <rect x="24" y="24" width="6" height="6"/>
+    </svg>
   </header>
 
   <!-- ===== ABOUT ===== -->
@@ -370,17 +359,17 @@ footer{padding:70px 40px 44px;}
       <div class="about-grid">
         <div>
           <div class="eyebrow">About the Fund</div>
-          <h2>A mandate, not a product line.</h2>
+          <h2>Capital for operating businesses, not real estate.</h2>
         </div>
         <div>
           <div class="about-copy">
-            <p>Fenelon Opportunity Fund Inc. was formed to do one thing well: steward the family's capital across a small number of opportunities we understand deeply, without the reporting cycles or style drift that come with outside capital.</p>
-            <p>The office is run directly by its founder, who is personally accountable for every commitment on the book. There is no committee to dilute conviction — only a handful of holdings, sized to reflect how strongly we believe in them.</p>
+            <p>Fenelon Opportunity Fund Inc. was formed to back business ventures directly — the founders and operators building companies, not passive real estate or tax-advantaged investment programs. We are not a Qualified Opportunity Fund and do not invest in Opportunity Zones.</p>
+            <p>The office is run directly by its founder, who is personally accountable for every commitment on the book. There is no committee to dilute conviction — every position is one we would be glad to hold for a generation.</p>
           </div>
           <div class="about-facts">
             <div class="fact-row"><span class="fact-label">Structure</span><span class="fact-value">Single-Family Office</span></div>
             <div class="fact-row"><span class="fact-label">Domicile</span><span class="fact-value">Texas, United States</span></div>
-            <div class="fact-row"><span class="fact-label">Mandate</span><span class="fact-value">Concentrated Direct Investments</span></div>
+            <div class="fact-row"><span class="fact-label">Mandate</span><span class="fact-value">Direct Investment in Business Ventures</span></div>
             <div class="fact-row"><span class="fact-label">Capital Base</span><span class="fact-value">Family Capital Only</span></div>
           </div>
         </div>
@@ -428,9 +417,9 @@ footer{padding:70px 40px 44px;}
       <div class="focus-head">
         <div>
           <div class="eyebrow">Where We Look</div>
-          <h2>Situations, not sectors.</h2>
+          <h2>Ventures, not vehicles.</h2>
         </div>
-        <p class="lead" style="max-width:360px;">We don't organize the portfolio by industry. We organize it by the kind of mispricing we're exploiting.</p>
+        <p class="lead" style="max-width:360px;">We back operating businesses directly. This is not a real estate fund, and not a tax-driven investment program.</p>
       </div>
       <div class="focus-list">
         <div class="focus-row">
@@ -445,8 +434,8 @@ footer{padding:70px 40px 44px;}
         </div>
         <div class="focus-row">
           <span class="focus-tag">03</span>
-          <span class="focus-name">Real Assets &amp; Property</span>
-          <span class="focus-desc">Real estate and other tangible assets acquired directly, on our own timeline, without fund-cycle pressure.</span>
+          <span class="focus-name">Growth Capital for Founders</span>
+          <span class="focus-desc">Direct investment behind operators who need capital and a long-term partner more than a board seat.</span>
         </div>
         <div class="focus-row">
           <span class="focus-tag">04</span>
@@ -462,7 +451,7 @@ footer{padding:70px 40px 44px;}
     <div class="philosophy-inner">
       <div class="mark"></div>
       <blockquote>
-        “Concentration is only a virtue when it's paired with patience. We hold what we understand, for as long as the thesis requires.”
+        “We invest as owners, not allocators. Patience is not a strategy we adopt — it is simply what it means to manage your own family's capital.”
       </blockquote>
       <cite>— Gregory Fenelon, Founder</cite>
     </div>
@@ -541,7 +530,7 @@ footer{padding:70px 40px 44px;}
       </div>
     </div>
     <div class="footer-disclosure">
-      This website is for informational purposes only. Fenelon Opportunity Fund Inc. is a private family office and does not solicit, manage, or accept capital from outside investors. Nothing on this site constitutes an offer, solicitation, or recommendation regarding any investment. Past performance is not indicative of future results.
+      This website is for informational purposes only. Fenelon Opportunity Fund Inc. is a private family office and does not solicit, manage, or accept capital from outside investors. Despite its name, Fenelon Opportunity Fund Inc. is not a Qualified Opportunity Fund and does not invest in Qualified Opportunity Zones under IRC Section 1400Z-2 or any related tax-incentive program. Nothing on this site constitutes an offer, solicitation, or recommendation regarding any investment. Past performance is not indicative of future results.
     </div>
     <div class="footer-bottom">
       <p>© 2026 Fenelon Opportunity Fund Inc. All Rights Reserved.</p>
@@ -559,16 +548,6 @@ navToggle.addEventListener('click', ()=>{
 navLinks.querySelectorAll('a').forEach(a=>{
   a.addEventListener('click', ()=> navLinks.classList.remove('open'));
 });
-
-// build the ledger: 60 cells, 6 held (filled), rest outline
-const ledger = document.getElementById('ledger');
-const heldIndices = new Set([7, 14, 23, 31, 42, 51]);
-for(let i=0;i<60;i++){
-  const cell = document.createElement('div');
-  cell.className = 'ledger-cell' + (heldIndices.has(i) ? ' held' : '');
-  cell.style.animationDelay = (i * 0.012) + 's';
-  ledger.appendChild(cell);
-}
 </script>
 
 </body>
